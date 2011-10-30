@@ -15,6 +15,18 @@
 #
 def triangle(a, b, c)
   # WRITE THIS CODE
+  sides = Array.new
+  sides << a << b << c
+  sides.uniq!
+
+  case sides.size
+  when 1
+    return :equilateral
+  when 2
+    return :isosceles
+  when 3
+    return :scalene
+  end
 end
 
 # Error class used in part 2.  No need to change this code.
