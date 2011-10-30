@@ -19,6 +19,14 @@ def triangle(a, b, c)
   sides << a << b << c
   sides.uniq!
 
+  if ((a<=0 || b<=0 || c<=0))
+      raise TriangleError
+  end
+
+  if ((a+b<=c) || (b+c<=a) || (a+c<=b))
+      raise TriangleError
+  end
+
   case sides.size
   when 1
     return :equilateral
